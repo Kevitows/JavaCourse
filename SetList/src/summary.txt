@@ -1,0 +1,19 @@
+Set represents a >Set< of elements:
+    ~ Not allow repeat;
+    ~ Elements have no position;
+    ~ Access, insert and remove of elements is fast;
+    ~ Offers efficient operations of set: intersection, union, difference;
+
+* Main implementations:
+    HashSet - Faster O(1) not ordered;
+    TreeSet - Slower O(log(n)) ordered by object's compareTo (default is alphabetically);
+    LinkedHashSet - Average speed ordered by input order;
+
+* Relevant methods:
+    add(obj), remove(obj), contains(obj)
+    ~ based on equals and hashCode;
+    clear(), size(), removeIf(predicate)
+
+    addAll(other) - union: adds to the set other set elements, no repeat;
+    retainAll(other) - intersection: remove set's elements that doesn't appear in other set;
+    removeAll(other) - difference: remove of set all elements contained in other set;
