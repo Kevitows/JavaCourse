@@ -17,3 +17,22 @@ Set represents a >Set< of elements:
     addAll(other) - union: adds to the set other set elements, no repeat;
     retainAll(other) - intersection: remove set's elements that doesn't appear in other set;
     removeAll(other) - difference: remove of set all elements contained in other set;
+
+Map<K,V> is a collection of key pairs / values:
+    ~ Not allow repeat of key object;
+    ~ The elements are indexed by the key object (have no position);
+    ~ Access, insert and removal of elements are fast;
+
+    ! Commons usage: cookies, local storage, any key-value model;
+
+* Main implementations:
+    HashMap - Faster (O(1) on hash table) and not ordered;
+    TreeMap - Slower (O(log(n) tree) and ordered by object's compareTo (or Comparator);
+    LinkedHashMap - Average speed and elements ordered by input order;
+
+* Relevant methods:
+    put(key,value), remove(key), containsKey(key), get(key)
+    ~ based on equals and hashCode;
+    clear(), size();
+    keySet() - returns Set<K>
+    values() - return Collection<V>
