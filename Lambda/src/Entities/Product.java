@@ -1,5 +1,7 @@
 package Entities;
 
+import java.util.function.Function;
+
 public class Product {
     private String name;
     private Double price;
@@ -26,7 +28,7 @@ public class Product {
     }
 
     public String toString() {
-        return getName() + " - " + getPrice();
+        return getName() + " - " + String.format("%.2f", getPrice());
     }
 
     public static boolean staticProductPredicate(Product p) {
@@ -36,4 +38,20 @@ public class Product {
     public boolean nonStaticProductPredicate() {
         return getPrice() < 100;
     }
+
+    public static void staticProductConsumer(Product p) {
+        p.setPrice(p.getPrice() * 1.1);
+    }
+
+    public void nonStaticProductConsumer() {
+        setPrice(getPrice() * 1.1);
+    }
+
+    public static String staticFunctionMethod(Product p) {
+        return p.getName().toUpperCase();
+    }
+    public String nonStaticFunctionMethod() {
+        return getName().toUpperCase();
+    }
+
 }
